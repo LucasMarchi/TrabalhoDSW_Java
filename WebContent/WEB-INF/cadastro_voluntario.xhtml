@@ -1,0 +1,41 @@
+<ui:composition template="/template.xhtml“
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:jsp="http://java.sun.com/JSP/Page"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html" >
+</ui:composition>
+
+<ui:define name="corpo-da-pagina">
+	 
+			<div class="container formulario">
+				<div class="row">
+					<h:form>
+						<p class="h3">Cadastrar Voluntário</p><br/>
+						
+						<div class="form-group">
+							<h:outputLabel class="form-control-label" value="Nome: "/>
+						  	<h:inputText class="form-control" value="#{voluntarioBean.nome}" />
+					  	</div>
+					  	
+					  	<div class="form-group">
+						  	<h:outputLabel class="form-control-label" value="Cpf: "/>
+						  	<h:inputText class="form-control" value="#{voluntarioBean.cpf}" />
+					  	</div>
+					  	
+					  	<div class="form-group">
+						  	<h:outputLabel class="form-control-label" value="E-mail: "/>
+						  	<h:inputText class="form-control" value="#{voluntarioBean.email}" />
+					  	</div>
+					  	
+					  	<div class="form-group">
+					  		<h:outputLabel class="form-control-label" value="Telefone: "/>
+					  		<h:inputText class="form-control" value="#{voluntarioBean.telefone}" />
+					  	</div>	
+					  	
+					  	<h:commandButton class="btn btn-success" value ="Salvar" action="#{voluntarioBean.cadastrarVoluntario}"/><br/><br/><br/>
+					  	
+				  	</h:form>
+				</div>
+			</div>
+</ui:define>

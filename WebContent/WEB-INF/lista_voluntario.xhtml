@@ -1,0 +1,44 @@
+<ui:composition template="/template.xhtml“
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:jsp="http://java.sun.com/JSP/Page"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html" >
+</ui:composition>
+
+<ui:define name="corpo-da-pagina">
+	 
+			<div class="container formulario">
+				<div class="row">
+					<h:form>
+						<p class="h3">Lista de Voluntários</p><br/>
+					  	
+					  	<h:dataTable class="table" id="tabelaVoluntarios" value="#{voluntarioBean.listaVoluntarios}" var="voluntario">
+							<h:column>
+								<f:facet name="header">ID</f:facet>
+								<h:outputText value="#{voluntario.id}" />
+							</h:column>
+							
+							<h:column>
+								<f:facet name="header">Nome</f:facet>
+								<h:outputText value="#{voluntario.nome}" />
+							</h:column>
+							
+							<h:column>
+								<f:facet name="header">CPF</f:facet>
+								<h:outputText value="#{voluntario.cpf}" />
+							</h:column>
+							
+							<h:column>
+								<f:facet name="header">E-mail</f:facet>
+								<h:outputText value="#{voluntario.email}" />
+							</h:column>		
+						</h:dataTable>
+					  	
+					  	
+					  	
+				  	</h:form>
+				</div>
+			</div>
+		
+</ui:define>

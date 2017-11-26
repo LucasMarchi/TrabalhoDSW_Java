@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html" version="2.0">
+	<jsp:directive.page language="java"
+		contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1" />
+	<jsp:text>
+		<![CDATA[ <?xml version="1.0" encoding="ISO-8859-1" ?> ]]>
+	</jsp:text>
+	<jsp:text>
+		<![CDATA[ <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> ]]>
+	</jsp:text>
+	<html xmlns="http://www.w3.org/1999/xhtml">
+<meta charset="utf-8"></meta>
+<meta http-equiv="X-UA-Compatible" content="IE=edge"></meta>
+<meta name="viewport" content="width=device-width, initial-scale=1"></meta>
+<title>Home</title>
+<link href="resources/css/bootstrap.min.css" rel="stylesheet"></link>
+<link
+	href="https://fonts.googleapis.com/css?family=Karla|Pacifico|Raleway"
+	rel="stylesheet"></link>
+<link href="resources/css/estilo.css" rel="stylesheet"></link>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<title>CadastrarLivro</title>
+</head>
+<body>
+	<f:view>
+		<!-- inicio cabecalho -->
+		<nav class="navbar navbar-inverse navbar-fixed-top">
+			<div class="container">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed"
+						data-toggle="collapse" data-target="#navbar" aria-expanded="false"
+						aria-controls="navbar">
+						<span class="sr-only">Toggle navigation</span> <span
+							class="icon-bar"></span> <span class="icon-bar"></span> <span
+							class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand" href="cadastro_voluntario.xhtml"><span
+						class="glyphicon glyphicon-education"></span>Projeto</a>
+				</div>
+				<div id="navbar" class="collapse navbar-collapse">
+					<ul class="nav navbar-nav">
+						<li class="dropdown"><a class="dropdown-toggle"
+							data-toggle="dropdown" href="#">Cadastrar <span class="caret"></span></a>
+							<ul class="dropdown-menu">
+								<li><a href="cadastro_voluntario.xhtml">Voluntários</a></li>
+								<li><a href="cadastro_projeto.xhtml">Projetos</a></li>
+								<li><a href="cadastro_usuario.xhtml">Usuários</a></li>
+							</ul></li>
+						<li class="dropdown"><a class="dropdown-toggle"
+							data-toggle="dropdown" href="#">Editar <span class="caret"></span></a>
+							<ul class="dropdown-menu">
+								<li><a href="atualiza_voluntario.xhtml">Voluntários</a></li>
+								<li><a href="atualiza_projeto.xhtml">Projetos</a></li>
+								<li><a href="atualiza_usuario.xhtml">Usuários</a></li>
+							</ul></li>	
+						<li class="dropdown"><a class="dropdown-toggle"
+							data-toggle="dropdown" href="#">Remover <span class="caret"></span></a>
+							<ul class="dropdown-menu">
+								<li><a href="remove_voluntario.xhtml">Voluntários</a></li>
+								<li><a href="remove_projeto.xhtml">Projetos</a></li>
+								<li><a href="remove_usuario.xhtml">Usuários</a></li>
+							</ul></li>	
+						<li><a href="pesquisar.xhtml">Pesquisar <span
+								class="glyphicon glyphicon-search"></span></a></li>
+					</ul>
+				</div>
+				<!--/.nav-collapse -->
+			</div>
+		</nav>
+		<!-- fim cabecalho -->
+		
+		<div class="container formulario">
+			<div class="row">
+				<h:form>
+				<h:messages id="messages" />
+					<p class="h3">Cadastro de Usuários</p>
+
+
+					<div class="form-group">
+						<h:outputLabel class="form-control-label" value="Email: " />
+						<h:inputText class="form-control"
+							value="#{usuarioBean.usuario.email}" />
+					</div>
+					<div class="form-group">
+						<h:outputLabel class="form-control-label" value="Senha: " />
+						<h:inputSecret class="form-control"
+							value="#{usuarioBean.usuario.senha}" />
+					</div>
+					<h:commandButton class="btn btn-success" value="Salvar" action="#{usuarioBean.gravar}" />
+				</h:form>
+			</div>
+		</div>
+	</f:view>
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="resources/js/bootstrap.min.js"></script>
+</body>
+	</html>
+</jsp:root>

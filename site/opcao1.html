@@ -1,0 +1,93 @@
+﻿<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Home</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Karla|Pacifico|Raleway" rel="stylesheet">
+    <link href="css/estilo.css" rel="stylesheet">
+  </head>
+  <body>
+  
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="voluntarios.html"><span class="glyphicon glyphicon-education"></span>Projeto</a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+			<li class="dropdown">
+				<a class="dropdown-toggle" data-toggle="dropdown" href="#">Cadastrar <span class="caret"></span></a>
+				<ul class="dropdown-menu">
+					<li><a href="voluntarios.html">Voluntários</a></li>
+					<li><a href="projetos.html">Projetos</a></li>
+				</ul>
+			</li>
+			<li><a href="pesquisar.html">Pesquisar <span class="glyphicon glyphicon-search"></span></a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+	
+	<div class="container formulario">
+		<div class="row">
+			<p class="h3">Projeto</p>
+			<form>
+				<div class="form-group">
+					<label class="form-control-label" for="formGroupExampleInput">Nome do projeto:</label>
+					<input type="text" class="form-control" id="formGroupExampleInput" placeholder="Projeto Manhattan">
+				</div>
+				<div class="form-group">
+					<label for="inputFone" class="control-label">Data de inicio:</label>
+					<input type="tel" class="form-control" id="inputFone" placeholder="dd/mm/aaaa">
+				</div>
+				<div class="form-group">
+					<label for="inputFone" class="control-label">Data do fim:</label>
+					<input type="tel" class="form-control" id="inputFone" placeholder="dd/mm/aaaa">
+				</div>
+				
+				<button class="btn btn-success" type="submit">Salvar Alterações</button>			
+			</form>
+		</div>
+	</div>
+	
+	<div class="container">
+		<div class="row">
+			<p class="h3">Voluntários no Projeto:</p>
+			<div class="list-group">
+				<button class="btn btn-primary" type="submit">Adicionar</button>
+				<a href="voluntario1.html" class="list-group-item list-group-item-action">Voluntário 1</a>
+				<a href="">Remover</a>
+				<a href="#" class="list-group-item list-group-item-action">Voluntário 2</a>
+				<a href="">Remover</a>
+				<a href="#" class="list-group-item list-group-item-action">Voluntário 3</a>
+				<a href="">Remover</a>
+			</div>
+		</div>
+	</div>
+	
+	<div class="container">
+		<div class="row">
+			<button class="btn btn-success" type="submit">Salvar Alterações</button>
+		</div>
+	</div>
+	
+	<div class="container formulario">
+		<div class="row">
+			<button class="btn btn-danger" type="submit">Excluir Projeto</button>
+		</div>
+	</div>
+	
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+  </body>
+</html>

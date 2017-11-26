@@ -1,0 +1,78 @@
+﻿<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Home</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Karla|Pacifico|Raleway" rel="stylesheet">
+    <link href="css/estilo.css" rel="stylesheet">
+  </head>
+  <body>
+  
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="voluntarios.html"><span class="glyphicon glyphicon-education"></span>Projeto</a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+			<li class="dropdown">
+				<a class="dropdown-toggle" data-toggle="dropdown" href="#">Cadastrar <span class="caret"></span></a>
+				<ul class="dropdown-menu">
+					<li><a href="voluntarios.html">Voluntários</a></li>
+					<li><a href="projetos.html">Projetos</a></li>
+				</ul>
+			</li>
+			<li><a href="pesquisar.html">Pesquisar <span class="glyphicon glyphicon-search"></span></a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+	
+	<div class="container formulario">
+		<div class="row">
+			<p class="h3">Cadastro de Usuários</p>
+			<form>
+				<div class="form-group">
+					<label for="exampleInputEmail1">Login:</label>
+					<input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Login">
+				</div>
+				<div class="form-group">
+					<label for="exampleInputPassword1">Senha:</label>
+					<input type="password" class="form-control" id="exampleInputPassword1" placeholder="Senha">
+				</div>
+				<div class="form-group">
+					<label for="exampleInputPassword1">Confirme a Senha:</label>
+					<input type="password" class="form-control" id="exampleInputPassword1" placeholder="Digite a senha novamente">
+				</div>
+				<button class="btn btn-success	" type="submit">Salvar</button>
+			</form>
+		</div>
+	</div>
+	
+	<div class="container">
+		<div class="row">
+			<p class="h3">Usuarios:</p>
+			<div class="list-group">
+				<a href="opcao1.html" class="list-group-item list-group-item-action">Usuário 1</a>
+				<a href="">Remover</a>
+				<a href="#" class="list-group-item list-group-item-action">Usuário 2</a>
+				<a href="">Remover</a>
+				<a href="#" class="list-group-item list-group-item-action">Usuário 3</a>
+				<a href="">Remover</a>
+			</div>
+		</div>
+	</div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+  </body>
+</html>

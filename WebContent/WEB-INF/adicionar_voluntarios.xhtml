@@ -1,0 +1,55 @@
+<ui:composition template="/template.xhtml“
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:jsp="http://java.sun.com/JSP/Page"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html" >
+</ui:composition>
+
+<ui:define name="corpo-da-pagina">
+		
+		<div class="container formulario">
+			<div class="row">
+				<h:form>
+					<h:messages id="messages" />
+					<p class="h3">Adicionar Voluntarios</p>
+
+
+					<div class="form-group">
+						<h:outputText class="form-control-label"
+							value="Projeto: #{projetoBean.projeto.nome} " />
+					</div>
+
+					<div class="form-group">
+						<h:inputText class="form-control"
+							value="#{projetoBean.cpf}" />
+					</div>
+
+					<h:commandButton class="btn btn-default" value="Pesquisar"
+						action="#{projetoBean.pesquisaeVoluntario}">
+						<f:ajax execute="@form" render="@form :formTabelaVoluntarios:tabelaVoluntarios" />
+					</h:commandButton>
+				</h:form>
+				
+				<h:form id="formTabelaVoluntarios">
+			<h:dataTable id="tabelaVoluntarios" value="#{projetoBean.voluntarios}" var="voluntario">
+				<h:column>
+					<f:facet name="header">Nome</f:facet>
+					<h:outputText value="#{voluntario.nome}" />
+				</h:column>
+					<h:column>
+						<f:facet name="header">Add Voluntário</f:facet>
+							<h:form>
+                    			<h:commandButton class="btn btn-success"
+									value="+" action="#{projetoBean.gravarVoluntario(voluntario)}" />
+                    		</h:form>
+					</h:column>
+				</h:dataTable>
+				</h:form>
+			</div>
+		</div>
+		
+</ui:define>
+
+
+	

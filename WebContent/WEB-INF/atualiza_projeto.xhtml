@@ -1,0 +1,96 @@
+<ui:composition template="/template.xhtml“
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:jsp="http://java.sun.com/JSP/Page"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html" >
+</ui:composition>
+
+<ui:define name="corpo-da-pagina">
+
+		<div class="container formulario">
+			<div class="row">
+				<p class="h3">Projeto Cadastrados:</p>
+
+				<h:form>
+					<h:dataTable class="table" id="tabelaProjeto"
+						value="#{projetoBean.listaProjetos}" var="projeto">
+						<h:column>
+							<f:facet name="header">ID</f:facet>
+							<h:outputText value="#{projeto.id}" />
+						</h:column>
+
+						<h:column>
+							<f:facet name="header">Nome</f:facet>
+							<h:outputText value="#{projeto.nome}" />
+						</h:column>
+
+						<div class="form-group">
+							<h:outputLabel value="Data de Início " class="control-label" />
+							<h:inputText id="dataInicio" class="form-control"
+								value="#{projetoBean.projeto.dataInicio.time}" required="true">
+								<f:convertDateTime pattern="dd/MM/yyyy HH:mm"
+									timeZone="America/Sao_Paulo" />
+							</h:inputText>
+						</div>
+						<div class="form-group">
+							<h:outputLabel class="control-label" value="Data de Término " />
+							<h:inputText id="dataTermino" class="form-control"
+								value="#{projetoBean.projeto.dataTermino.time}" required="true">
+								<f:convertDateTime pattern="dd/MM/yyyy HH:mm"
+									timeZone="America/Sao_Paulo" />
+							</h:inputText>
+						</div>
+					</h:dataTable>
+
+
+
+
+					<Br />
+					<Br />
+
+
+					<p class="h3">Atualizar Projeto</p>
+					<br />
+
+					<div class="form-group">
+						<h:outputLabel class="form-control-label" value="ID: " />
+						<h:inputText class="form-control" value="#{projetoBean.projeto.id}" />
+					</div>
+
+					<div class="form-group">
+						<h:outputLabel class="form-control-label" value="Nome: " />
+						<h:inputText class="form-control" value="#{projetoBean.projeto.nome}" />
+					</div>
+
+					<div class="form-group">
+						<h:outputLabel value="Data de Início " class="control-label" />
+						<h:inputText id="dataInicio" class="form-control"
+							value="#{projetoBean.projeto.dataInicio.time}" required="true">
+							<f:convertDateTime pattern="dd/MM/yyyy HH:mm"
+								timeZone="America/Sao_Paulo" />
+						</h:inputText>
+					</div>
+					<div class="form-group">
+						<h:outputLabel class="control-label" value="Data de Término " />
+						<h:inputText id="dataTermino" class="form-control"
+							value="#{projetoBean.projeto.dataTermino.time}" required="true">
+							<f:convertDateTime pattern="dd/MM/yyyy HH:mm"
+								timeZone="America/Sao_Paulo" />
+						</h:inputText>
+					</div>
+
+					<h:commandButton class="btn btn-success" value="Salvar"
+						action="#{projetoBean.gravar}" />
+
+
+
+
+
+				</h:form>
+
+			</div>
+		</div>
+		
+</ui:define>
+
