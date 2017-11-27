@@ -1,0 +1,26 @@
+<ui:composition template="/template.xhtml"
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:jsp="http://java.sun.com/JSP/Page"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html" >
+	
+<ui:define name="corpo-da-pagina">
+		
+		<div class="container formulario">
+			<div class="row">
+			<p class="h3">Lista de Usuarios</p><br/>
+				<h:form id="formTabelaProjetos">
+					<h:dataTable class="table table-responsive" id="tabelaProjetos"
+						value="#{usuarioBean.listaUsuarios}" var="usuario"  columnClasses="col-md-8">
+						<h:column >
+							<f:facet name="header" >Nome</f:facet>
+							<h:outputText value="#{usuario.email}" />
+						</h:column>
+
+					</h:dataTable>
+				</h:form>
+			</div>
+		</div>
+	</ui:define>
+</ui:composition>

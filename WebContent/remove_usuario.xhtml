@@ -1,0 +1,42 @@
+<ui:composition template="/template.xhtml"
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:jsp="http://java.sun.com/JSP/Page"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html">
+
+	<ui:define name="corpo-da-pagina">
+		<div class="container formulario">
+			<div class="row">
+				<h:form>
+					<p class="h3">Excluir Usuário</p>
+					<br />
+					<div class="form-group">
+						<h:outputLabel class="form-control-label" value="Id: " />
+						<h:inputText class="form-control"
+							value="#{usuarioBean.usuario.id}" />
+					</div>
+					<h:commandButton class="btn btn-danger" value="Remover"
+						action="#{usuarioBean.removerUsuario}" />
+					<Br />
+					<Br />
+
+
+					<h:dataTable class="table" id="tabelaprojetos"
+						value="#{usuarioBean.listaUsuarios}" var="usuario">
+						<h:column>
+							<f:facet name="header">ID</f:facet>
+							<h:outputText value="#{usuario.id}" />
+						</h:column>
+
+						<h:column>
+							<f:facet name="header">Nome</f:facet>
+							<h:outputText value="#{usuario.email}" />
+						</h:column>
+
+					</h:dataTable>
+				</h:form>
+			</div>
+		</div>
+	</ui:define>
+</ui:composition>

@@ -1,0 +1,57 @@
+<ui:composition template="/template.xhtml"
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:jsp="http://java.sun.com/JSP/Page"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html">
+
+	<ui:define name="corpo-da-pagina">
+
+		<div class="container formulario">
+			<div class="row">
+				<p class="h3">Usuáio Cadastrados:</p>
+
+				<h:form>
+					<h:dataTable class="table" id="tabelausuario"
+						value="#{usuarioBean.listaUsuarios}" var="usuario">
+						<h:column>
+							<f:facet name="header">ID</f:facet>
+							<h:outputText value="#{usuario.id}" />
+						</h:column>
+
+						<h:column>
+							<f:facet name="header">Email</f:facet>
+							<h:outputText value="#{usuario.email}" />
+						</h:column>
+
+					</h:dataTable>
+
+					<Br />
+					<Br />
+
+
+					<p class="h3">Atualizar usuario</p>
+					<br />
+
+					<div class="form-group">
+						<h:outputLabel class="form-control-label" value="ID: " />
+						<h:inputText class="form-control"
+							value="#{usuarioBean.usuario.id}" />
+					</div>
+
+					<div class="form-group">
+						<h:outputLabel class="form-control-label" value="Email: " />
+						<h:inputText class="form-control"
+							value="#{usuarioBean.usuario.email}" />
+					</div>
+
+
+					<h:commandButton class="btn btn-success" value="Salvar"
+						action="#{usuarioBean.gravar}" />
+
+				</h:form>
+
+			</div>
+		</div>
+	</ui:define>
+</ui:composition>

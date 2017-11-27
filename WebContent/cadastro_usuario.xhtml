@@ -1,0 +1,32 @@
+<ui:composition template="/template.xhtml"
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:jsp="http://java.sun.com/JSP/Page"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html">
+
+	<ui:define name="corpo-da-pagina">
+		<div class="container formulario">
+			<div class="row">
+				<h:form>
+					<h:messages id="messages" />
+					<p class="h3">Cadastro de Usuários</p>
+
+
+					<div class="form-group">
+						<h:outputLabel class="form-control-label" value="Email: " />
+						<h:inputText class="form-control"
+							value="#{usuarioBean.usuario.email}" />
+					</div>
+					<div class="form-group">
+						<h:outputLabel class="form-control-label" value="Senha: " />
+						<h:inputSecret class="form-control"
+							value="#{usuarioBean.usuario.senha}" />
+					</div>
+					<h:commandButton class="btn btn-success" value="Salvar"
+						action="#{usuarioBean.gravar}" />
+				</h:form>
+			</div>
+		</div>
+	</ui:define>
+</ui:composition>

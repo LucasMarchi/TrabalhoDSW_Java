@@ -1,30 +1,32 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <jsp:root xmlns:jsp="http://java.sun.com/JSP/Page"
 	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:h="http://java.sun.com/jsf/html" version="2.0">
 	<jsp:directive.page language="java"
-		contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1" />
+		contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" />
 	<jsp:text>
-		<![CDATA[ <?xml version="1.0" encoding="ISO-8859-1" ?> ]]>
+		<![CDATA[ <?xml version="1.0" encoding="UTF-8" ?> ]]>
 	</jsp:text>
 	<jsp:text>
 		<![CDATA[ <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
         "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> ]]>
 	</jsp:text>
 	<html xmlns="http://www.w3.org/1999/xhtml">
-<meta charset="utf-8"></meta>
-<meta http-equiv="X-UA-Compatible" content="IE=edge"></meta>
-<meta name="viewport" content="width=device-width, initial-scale=1"></meta>
-<title>Home</title>
-<link href="resources/css/bootstrap.min.css" rel="stylesheet"></link>
-<link
-	href="https://fonts.googleapis.com/css?family=Karla|Pacifico|Raleway"
-	rel="stylesheet"></link>
-<link href="resources/css/estilo.css" rel="stylesheet"></link>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
-<title>CadastrarLivro</title>
-</head>
+<h:head>
+	<meta charset="utf-8"></meta>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"></meta>
+	<meta name="viewport" content="width=device-width, initial-scale=1"></meta>
+	<title>Home</title>
+	<link href="resources/css/bootstrap.min.css" rel="stylesheet"></link>
+	<link
+		href="https://fonts.googleapis.com/css?family=Karla|Pacifico|Raleway"
+		rel="stylesheet"></link>
+	<link href="resources/css/estilo.css" rel="stylesheet"></link>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title></title>
+</h:head>
+
 <body>
 	<f:view>
 
@@ -57,16 +59,18 @@
 								<li><a href="atualiza_voluntario.xhtml">Voluntários</a></li>
 								<li><a href="atualiza_projeto.xhtml">Projetos</a></li>
 								<li><a href="atualiza_usuario.xhtml">Usuários</a></li>
-							</ul></li>	
+							</ul></li>
 						<li class="dropdown"><a class="dropdown-toggle"
 							data-toggle="dropdown" href="#">Remover <span class="caret"></span></a>
 							<ul class="dropdown-menu">
 								<li><a href="remove_voluntario.xhtml">Voluntários</a></li>
 								<li><a href="remove_projeto.xhtml">Projetos</a></li>
 								<li><a href="remove_usuario.xhtml">Usuários</a></li>
-							</ul></li>	
+							</ul></li>
 						<li><a href="pesquisar.xhtml">Pesquisar <span
 								class="glyphicon glyphicon-search"></span></a></li>
+						<li  class="text-right"><h:form><h:commandButton class="btn btn-success" value="Logout"
+						action="#{usuarioBean.deslogar}" style="margin-top: 10px; margin-left: 580px" /></h:form></li>
 					</ul>
 				</div>
 				<!--/.nav-collapse -->
@@ -74,55 +78,16 @@
 		</nav>
 		<!-- fim cabecalho -->
 
-		<div class="container formulario">
-			<div class="row">
-				<p class="h3">Usuáio Cadastrados:</p>
+		<ui:insert name="corpo-da-pagina"></ui:insert>
 
-				<h:form>
-					<h:dataTable class="table" id="tabelausuario"
-						value="#{usuarioBean.listaUsuarios}" var="usuario">
-						<h:column>
-							<f:facet name="header">ID</f:facet>
-							<h:outputText value="#{usuario.id}" />
-						</h:column>
-
-						<h:column>
-							<f:facet name="header">Email</f:facet>
-							<h:outputText value="#{usuario.email}" />
-						</h:column>
-						
-					</h:dataTable>
-
-					<Br />
-					<Br />
-
-
-					<p class="h3">Atualizar usuario</p>
-					<br />
-
-					<div class="form-group">
-						<h:outputLabel class="form-control-label" value="ID: " />
-						<h:inputText class="form-control" value="#{usuarioBean.usuario.id}" />
-					</div>
-
-					<div class="form-group">
-						<h:outputLabel class="form-control-label" value="Email: " />
-						<h:inputText class="form-control" value="#{usuarioBean.usuario.email}" />
-					</div>
-
-
-					<h:commandButton class="btn btn-success" value="Salvar"
-						action="#{usuarioBean.gravar}" />
-
-				</h:form>
-
-			</div>
-		</div>
 	</f:view>
 
 	<script
 		src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 	<script src="resources/js/bootstrap.min.js"></script>
+
 </body>
 	</html>
+
+
 </jsp:root>
